@@ -1,0 +1,118 @@
+.container-app{
+    display: flex;
+    flex-direction: column;
+    min-height: 150vh;
+    width: 100%;
+    background: linear-gradient(320deg, #5596ff 0%, #ac2deb 100%);
+    align-items: center;
+    position: relative;
+}
+
+
+.container-app input[type="text"]{
+    width: 540px;
+    z-index: 2;
+}
+
+.container-app ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.container-mask{
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
+    position: absolute;
+    opacity: 0.5;
+}
+
+.container-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://static-cse.canva.com/blob/2083388/1600w-Qtuabb3sJhM.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    position: relative;
+
+}
+.container-header h1{
+    z-index: 2;
+    color:rgb(248, 248, 250);
+}
+
+
+.content-tasks{
+    z-index: 2;
+    width: 540px;
+    min-height: 350px;
+    border-radius: 5px 0px 0px 0px;
+    background-color: #fff;
+    position: absolute;
+    top:  150px;
+    box-shadow: 0px 35px 50px -15px #0000009a;
+}
+
+.empty-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    gap: 10px;
+}
+
+.empty-image img{
+    width: 200px;
+    height: auto;
+
+}
+
+.content-actions{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 24px;
+    height: 50px;
+    border-top: 1px solid #e3e4f1;
+}
+
+.content-actions div{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.content-actions a{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #0814b4;
+}
+
+.task-item{
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    height: 64px;
+    gap: 24px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #494C6B;
+    border-bottom: 1px, solid #e3e4f1;
+}
+
+.task-item input{
+    width: 24px;
+    height: 24px;
+}
+
+.task-item_status{
+    text-decoration-line: line-through;
+    color: #d1d2da;
+
+}
