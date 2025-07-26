@@ -3,7 +3,7 @@ import './App.css';
 import { type TaskType } from './types/TaskType';
 import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from 'usehooks-ts';
-import EmptyImage from "./assets/empty.svg";
+import Empty from './components/Empty/Empty';
 
 function App() {
 
@@ -57,7 +57,7 @@ function filteredTasks(){
                 </li>
               ))}
 
-                {filteredTasks().length === 0 && (<div className='empty-image'><img src={EmptyImage} alt="empty"/><h3>Sem informações cadastradas</h3></div>)}
+                {filteredTasks().length === 0 && (<Empty/>)}
             </div>
             
             <li className='content-actions'>
