@@ -1,4 +1,5 @@
 import EmptyImage from "../../assets/empty.svg";
+import './Empty.css';
 
 function Empty(){
     return(
@@ -10,4 +11,4 @@ function Empty(){
  )
 }
 
-export default Empty;
+export default Empty
