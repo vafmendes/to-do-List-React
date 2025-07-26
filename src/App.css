@@ -57,20 +57,7 @@
     box-shadow: 0px 35px 50px -15px #0000009a;
 }
 
-.empty-image{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    gap: 10px;
-}
 
-.empty-image img{
-    width: 200px;
-    height: auto;
-
-}
 
 .content-actions{
     display: flex;
