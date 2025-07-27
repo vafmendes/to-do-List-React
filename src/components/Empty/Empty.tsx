@@ -1,12 +1,21 @@
 import EmptyImage from "../../assets/empty.svg";
 import './Empty.css';
 
-function Empty(){
+interface EmptyProps{
+    title?: string;
+    show: boolean;
+}
+
+function Empty({title= "Nenhuma tarefa cadastrada", show}: EmptyProps){
     return(
-        <div className='empty-image'>
+        <>
+        {show === true &&(
+            <div className='empty-image'>
             <img src={EmptyImage} alt="empty"/>
-            <h3>Sem informações cadastradas</h3>
-        </div>
+            <h3>{title}</h3>
+          </div>
+        )}
+        </>
 
  )
 }

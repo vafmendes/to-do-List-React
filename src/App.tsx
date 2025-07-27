@@ -56,8 +56,7 @@ function filteredTasks(){
                     <input type="checkbox" checked={t.status} onChange={()=>handleTaskToggle(t.id)}/> {t.title}
                 </li>
               ))}
-
-                {filteredTasks().length === 0 && (<Empty/>)}
+              <Empty title='Nenhuma informação cadastrada' show={filteredTasks().length === 0}/>
             </div>
             
             <li className='content-actions'>
