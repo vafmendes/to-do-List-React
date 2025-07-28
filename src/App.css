@@ -81,25 +81,3 @@
     color: #0814b4;
 }
 
-.task-item{
-    display: flex;
-    align-items: center;
-    padding: 20px 24px;
-    height: 64px;
-    gap: 24px;
-    font-size: 18px;
-    font-weight: 400;
-    color: #494C6B;
-    border-bottom: 1px, solid #e3e4f1;
-}
-
-.task-item input{
-    width: 24px;
-    height: 24px;
-}
-
-.task-item_status{
-    text-decoration-line: line-through;
-    color: #d1d2da;
-
-}

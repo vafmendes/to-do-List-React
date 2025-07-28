@@ -4,6 +4,7 @@ import { type TaskType } from './types/TaskType';
 import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from 'usehooks-ts';
 import Empty from './components/Empty/Empty';
+import Task from './components/Task/Task';
 
 function App() {
 
@@ -52,9 +53,7 @@ function filteredTasks(){
           <ul className='content-tasks'>
             <div>
                 {filteredTasks().map((t)=>(
-                  <li className={`task-item ${t.status ?"task-item_status":""}`} key={t.id}> 
-                    <input type="checkbox" checked={t.status} onChange={()=>handleTaskToggle(t.id)}/> {t.title}
-                </li>
+                  <Task task={t} handleTaskToggle={handleTaskToggle}/>
               ))}
               <Empty title='Nenhuma informação cadastrada' show={filteredTasks().length === 0}/>
             </div>
