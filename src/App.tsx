@@ -41,6 +41,10 @@ function filteredTasks(){
 
 }
 
+function handleUncheckAllCompletedtasks(){
+  setTask((prevState) => prevState.map((task)=> (task.status ? {...task, status: false }: task)))
+};
+
   return (
     <div className="container-app">
       <div className="container-header">
@@ -68,7 +72,7 @@ function filteredTasks(){
                   <a onClick={()=> setFilter("done")}>Completadas</a>
                 </div>
               <div>
-                  <a href="#">Limpar Completadas</a>
+                  <a href="#" onClick={handleUncheckAllCompletedtasks}>Limpar Completadas</a>
               </div>
             </li>
           </ul>
