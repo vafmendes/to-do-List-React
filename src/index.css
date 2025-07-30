@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-input[type="text"],input[type="password"], input[type="number"]{
+input[type="text"]{
   width: 540px;
   height: 64px;
   padding: 20px 24px;
