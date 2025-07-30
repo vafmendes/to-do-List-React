@@ -5,12 +5,22 @@ import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from 'usehooks-ts';
 import Empty from './components/Empty/Empty';
 import Task from './components/Task/Task';
+import Filters from './components/Filters/Filters';
+import type { FilterType } from './types/FilterType';
 
 function App() {
 
 const[input, setInput] = useState("");
-const[filter, setFilter] = useState<"all"|"done"|"pending">("all");
+const[filter, setFilter] = useState<FilterType>("all");
 const [tasks, setTask] = useLocalStorage<TaskType[]>("task-lists",[]);
+
+function handleSetTasks(newTasks: TaskType[]){
+  setTask(newTasks);
+}
+
+function handleSetFilter(newFilters: FilterType){
+  setFilter(newFilters);
+}
 
 
 function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>){
@@ -41,9 +51,7 @@ function filteredTasks(){
 
 }
 
-function handleUncheckAllCompletedtasks(){
-  setTask((prevState) => prevState.map((task)=> (task.status ? {...task, status: false }: task)))
-};
+
 
   return (
     <div className="container-app">
@@ -62,19 +70,8 @@ function handleUncheckAllCompletedtasks(){
               <Empty title='Nenhuma informação cadastrada' show={filteredTasks().length === 0}/>
             </div>
             
-            <li className='content-actions'>
-              <div>
-                <a href="#">{tasks.length} tarefas</a>
-              </div>
-              <div>
-                  <a onClick={()=> setFilter("all")}>Todas</a>
-                  <a onClick={()=> setFilter("pending")}>Ativas</a>
-                  <a onClick={()=> setFilter("done")}>Completadas</a>
-                </div>
-              <div>
-                  <a href="#" onClick={handleUncheckAllCompletedtasks}>Limpar Completadas</a>
-              </div>
-            </li>
+           <Filters handleSetTasks={handleSetTasks} handleSetFilter={handleSetFilter} tasks={tasks} />
+
           </ul>
      </div>
    
