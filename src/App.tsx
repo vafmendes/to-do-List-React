@@ -7,8 +7,21 @@ import Empty from './components/Empty/Empty';
 import Task from './components/Task/Task';
 import Filters from './components/Filters/Filters';
 import type { FilterType } from './types/FilterType';
+import GlobalContextProvider, { useGlobalContext } from './context/GlobalContext';
+
+
+export default function AppPage(){
+  return(
+    <GlobalContextProvider>
+      <App/>
+    </GlobalContextProvider>
+
+  )
+}
+
 
 function App() {
+const {title} = useGlobalContext();
 
 const[input, setInput] = useState("");
 const[filter, setFilter] = useState<FilterType>("all");
@@ -57,7 +70,7 @@ function filteredTasks(){
     <div className="container-app">
       <div className="container-header">
         <div className="container-mask"/>
-        <h1>Lista de tarefas</h1>
+        <h1>{title}</h1>
         <input type="text" placeholder="Criar uma nova tarefa" 
             value={input} 
             onChange={(event)=> setInput(event.target.value)} onKeyDown={handleKeyDown} />
@@ -78,4 +91,3 @@ function filteredTasks(){
   )
 }
 
-export default App
